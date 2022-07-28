@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import java.util.List;
+import java.util.*;
 
 import javax.transaction.Transactional;
 
@@ -24,6 +24,21 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Transactional
 	public void save(Employee e) {
 		repository.save(e);
+		
+	}
+
+	@Transactional
+	public Employee findById(Integer id) {
+		Optional<Employee> p = repository.findById(id);
+		Employee emp = null;
+		if(p.isPresent())
+			emp = p.get(); 
+		return emp;
+	}
+
+	@Transactional
+	public void deleteById(Integer id) {
+		repository.deleteById(id);
 		
 	}
 

@@ -20,6 +20,7 @@
 					<th>Salary</th>
 					<th>Commission</th>
 					<th>Department Number</th>
+					<th>Action</th>
 				</tr>
 				<tr th:each = "tempEmp : ${EMPLOYEE}">
 					<td th:text = "${tempEmp.empno}"></td>
@@ -30,6 +31,9 @@
 					<td th:text = "${tempEmp.salary}"></td>
 					<td th:text = "${tempEmp.commission}"></td>
 					<td th:text = "${tempEmp.deptNo}"></td>
+					<td><a th:href = "@{/employee/updateForm(empId = ${tempEmp.empno})}" class = "btn btn-dark">Update Employee</a> &nbsp;
+					<a class = "btn btn-dark" th:href = "@{/employee/deleteForm(empId = ${tempEmp.empno})}" 
+					onclick = "if(!(confirm('Do you want to delete the Employee'))) return false">Delete Employee</a></td>
 				</tr>
 		</div>
 	</body>
