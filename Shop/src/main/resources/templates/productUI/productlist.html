@@ -55,12 +55,12 @@
 					<th>Action</th>
 				</tr>
 				<tr th:each = "temp : ${PRODUCT}">
-					<td th:text = "${temp.id}"></td>
+					<td th:text = "${temp.id}"></td> <!--th:text = "${temp.imageurl}"-->
 					<td th:text = "${temp.sku}"></td>
 					<td th:text = "${temp.name}"></td>
 					<td th:text = "${temp.description}"></td>
 					<td th:text = "${temp.unitprice}"></td>
-					<td th:text = "${temp.imageurl}"></td>
+					<td><img th:src=" ${temp.imageurl}" width="250" height="250"/></td>
 					<td th:text = "${temp.active}"></td>
 					<td th:text = "${temp.unitinstock}"></td>
 					<td th:text = "${temp.datecreated}"></td>
