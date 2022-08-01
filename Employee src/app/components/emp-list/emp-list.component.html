@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="color : white;">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"  style="margin-right: 15px;"><button class = "btn btn-outline-light" (click) = "gotoHome()">Home</button></li>
+        <li class="nav-item"  style="margin-right: 15px;"><button class = "btn btn-outline-light" (click) = "empForm()">Add Employee</button></li>
+        <li class="nav-item"  style="margin-right: 15px;"><button class = "btn btn-outline-light" (click) = "departmentDetails()">Department List</button></li>
+        <li class="nav-item"  style="margin-right: 15px;"><button class = "btn btn-outline-light" (click) = "deptForm()">Add Department</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="main-content container">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div class="row">
+        <h2 style="text-align: center;">Employee List</h2>
+        <table class = "table table-bordered table-striped " style="border-spacing: 10px;background-color: lightblue;margin-top: 20px">
+          <tr style="background-color: darkblue; color: white;">
+            <th style="text-align: center;">Employee ID</th>
+            <th style="text-align: center;">Employee Name</th>
+            <th style="text-align: center;">Designation</th>
+            <th style="text-align: center;">Hire Date</th>
+            <th style="text-align: center;">Manager ID</th>
+            <th style="text-align: center;">Salary</th>
+            <th style="text-align: center;">Commission</th>
+            <th style="text-align: center;">Department Number</th>
+          </tr>
+          <tr *ngFor = "let temp of employees">
+            <td style="text-align: center; height: 80px;">{{temp.empNo}}</td>
+            <td style="text-align: center; height: 80px;">{{temp.eName}}</td>
+            <td style="text-align: center; height: 80px;">{{temp.job}}</td>
+            <td style="text-align: center; height: 80px;">{{temp.hireDate}}</td>
+            <td style="text-align: center; height: 80px;">{{temp.managerId}}</td>
+            <td style="text-align: center; height: 80px;">{{temp.salary}}</td>
+            <td style="text-align: center; height: 80px;">{{temp.commission}}</td>
+            <td style="text-align: center; height: 80px;">{{temp.deptNo}}</td>
+
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
