@@ -2,13 +2,22 @@ package com.example.demo.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Embeddable
+@Entity
 @Table(name = "merchantpreferences")
 public class MerchantPreferences {
-	@ManyToOne
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "preferid")
+	private Integer preferId;
+	
 	@Column(name = "merchantid")
 	private Integer merchantId;
 	
@@ -28,13 +37,12 @@ public class MerchantPreferences {
 		
 	}
 
-	public MerchantPreferences(Integer merchantId, double upperLimit, double lowerLimit, long pinCode, String custName) {
-		super();
-		this.merchantId = merchantId;
-		this.upperLimit = upperLimit;
-		this.lowerLimit = lowerLimit;
-		this.pinCode = pinCode;
-		this.custName = custName;
+	public Integer getPreferId() {
+		return preferId;
+	}
+
+	public void setPreferId(Integer preferId) {
+		this.preferId = preferId;
 	}
 
 	public Integer getMerchantId() {
@@ -76,6 +84,17 @@ public class MerchantPreferences {
 	public void setCustName(String custName) {
 		this.custName = custName;
 	}
-	
+
+	public MerchantPreferences(Integer preferId, Integer merchantId, double upperLimit, double lowerLimit, long pinCode,
+			String custName) {
+		super();
+		this.preferId = preferId;
+		this.merchantId = merchantId;
+		this.upperLimit = upperLimit;
+		this.lowerLimit = lowerLimit;
+		this.pinCode = pinCode;
+		this.custName = custName;
+	}
+
 	
 }

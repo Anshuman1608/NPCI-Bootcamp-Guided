@@ -3,11 +3,21 @@ package com.example.demo.entity;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Embeddable
+@Entity
 @Table(name = "transactionproduct")
 public class TransactionProduct {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "tpid")
+	private Integer tpId;
 	
 	@Column(name = "transactionid")
 	private Integer transactionId;

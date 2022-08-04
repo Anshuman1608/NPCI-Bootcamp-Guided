@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,6 +28,7 @@ public class AllTransactions {
 	
 	@Column(name = "pincode")
 	private long pinCode;
+	
 	
 	public AllTransactions() {
 		
